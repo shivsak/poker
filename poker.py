@@ -12,7 +12,14 @@ def test(heroHandInput, villainHandInput, boardInput):
 	print("Villain's Hand: " + villainHand.to_string())
 	print("Board: " + board.to_string())
 	print("")
-	print("Hero's hand evaluates to: " + evaluate(heroHand, board).getEvalString())
+	print("")
+	printEvaluations(evaluate(heroHand, board), evaluate(villainHand, board))
+	print("")
+	print("")
+
+	# Compare Hero Hand and VillainHand
+	print("******* COMPARE HANDS *********")
+	compare(heroHand, villainHand, board)
 
 
 # Parse the board
@@ -44,11 +51,11 @@ def evaluate(hand, board):
 
 	handEval = HandEvaluation(HandScores.HIGH, max(ranks))
 
-	# Quads
 	quadsEval = quads(ranks)
 	flushEval = flush(hand, board)
 	straightEval = straight(ranks)
 	tripsEval = trips(ranks)
+	twoPairEval = twoPair(ranks)
 	pairEval = pair(ranks)
 
 	# Quads
@@ -70,11 +77,16 @@ def evaluate(hand, board):
 	# Trips
 	elif tripsEval != 0:
 		handEval = HandEvaluation(HandScores.TRIPS, tripsEval)
+
+	# Trips
+	elif twoPairEval != 0:
+		handEval = HandEvaluation(HandScores.TWO_PAIR, twoPairEval[0], twoPairEval[1])
+
 	# Pair
 	elif pairEval != 0:
 		handEval = HandEvaluation(HandScores.PAIR, pairEval)
 
-	printHandEvaluation(handEval)
+	# printHandEvaluation(handEval)
 
 	return handEval
 
@@ -87,17 +99,34 @@ def quads(ranks):
 	return 0
 
 
-def pair(ranks):
+def trips(ranks):
 	for rank in ranks:
-		if (ranks.count(rank)) == 2:
+		if (ranks.count(rank)) == 3:
 			return rank
 
 	return 0
 
 
-def trips(ranks):
+def twoPair(ranks):
+	pairs = ()
+	uniqueRanks = set(ranks)
+	print(uniqueRanks)
+	for rank in uniqueRanks:
+		if (ranks.count(rank) == 2):
+			pairs += (rank,)
+
+	if (len(pairs) >= 2):
+		pair1, pair2, *rest  = reversed(sorted(pairs))
+		return pair1, pair2
+
+	else:
+		return 0
+
+
+def pair(ranks):
+	numPairs = 0
 	for rank in ranks:
-		if (ranks.count(rank)) == 3:
+		if (ranks.count(rank)) == 2:
 			return rank
 
 	return 0
@@ -343,6 +372,53 @@ class HandEvaluation(object):
 			return "No Hand Evaluation String found"
 
 
+
+"""
+Methods for Comparisons between different hands
+"""
+
+# Debugging method to print the hand evaluations
+def printEvaluations(heroHandEvaluation, villainHandEvaluation):
+	print("")
+	print("***************")
+	print("EVALUATIONS:")
+	print("Hero's hand evaluates to " + heroHandEvaluation.getEvalString())
+	print("Villain's hand evaluates to " + villainHandEvaluation.getEvalString())
+	print("***************")
+	print("")
+
+
+# Compare hero's hand and villain's hand on the current board
+def compare(heroHand, villainHand, board):
+	heroHandEvaluation = evaluate(heroHand, board)
+	villainHandEvaluation = evaluate(villainHand, board)
+
+	# printEvaluations(heroHandEvaluation, villainHandEvaluation)
+
+	if (heroHandEvaluation.evaluation.value > villainHandEvaluation.evaluation.value):
+		heroWins()
+	elif (heroHandEvaluation.evaluation.value == villainHandEvaluation.evaluation.value):
+		if (heroHandEvaluation.highCard > villainHandEvaluation.highCard):
+			heroWins()
+		elif (heroHandEvaluation.highCard < villainHandEvaluation.highCard):
+			villainWins()
+		elif (heroHandEvaluation.highCard == villainHandEvaluation.highCard):
+			tie()
+	else:
+		villainWins()
+
+
+def heroWins():
+	print("Hero wins")
+
+
+def villainWins():
+	print("Villain wins")
+
+def tie():
+	print("Tie")
+
+
 class HandScores(Enum):
 	HIGH = 0
 	PAIR = 1
@@ -353,6 +429,27 @@ class HandScores(Enum):
 	FULL_HOUSE = 6
 	QUADS = 7
 	STRAIGHT_FLUSH = 8
+
+	def to_string(self):
+		if (self == HandScores.HIGH):
+			return "High card"
+		elif (self == HandScores.PAIR):
+			return "Pair"
+		elif (self == HandScores.TWO_PAIR):
+			return "Two Pair"
+		elif (self == HandScores.TRIPS):
+			return "Three of a kind"
+		elif (self == HandScores.STRAIGHT):
+			return "Straight"
+		elif (self == HandScores.FLUSH):
+			return "Flush"
+		elif (self == HandScores.FULL_HOUSE):
+			return "Full House"
+		elif (self == HandScores.QUADS):
+			return "Four of a kind"
+		elif (self == HandScores.STRAIGHT_FLUSH):
+			return "Straight Flush"
+
 
 
 class HandRanks(Enum):
@@ -370,4 +467,4 @@ class Suits(Enum):
 	DIAMONDS = 'Diamonds'
 
 if __name__ == "__main__":
-	test("Ac7s", "AdAc", "As2s3s4s5d")
+	test("3c8d", "4d2h", "Ks2s3s4sKd")
