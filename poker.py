@@ -99,22 +99,23 @@ def straight(ranks):
 	# can't make a 5 card straight without a 5 or a 10
 	sortedRanks = sorted(ranks)
 	if 5 in sortedRanks or 10 in sortedRanks:
-		# special case for wheel
-		if wheel(sortedRanks):
-			return 5
-		else:
-			# ranks should have at most 7 elements. So if we check sortedRanks[i]-sortedRanks[i+4]
-			print(sortedRanks)
-			i = len(sortedRanks)-1
-			while i > (len(sortedRanks)-4):
-				print("")
-				if sortedRanks[i]-1 in sortedRanks and sortedRanks[i]-2 in sortedRanks and sortedRanks[i]-3 in sortedRanks and sortedRanks[i]-4 in sortedRanks:
-					return sortedRanks[i]
-				else:
-					i+=1
+		# ranks should have at most 7 elements. So if we check sortedRanks[i]-sortedRanks[i+4]
+		print(sortedRanks)
+		i = len(sortedRanks)-1
+		while i > (len(sortedRanks)-4):
+			print("")
+			if sortedRanks[i]-1 in sortedRanks\
+					and sortedRanks[i]-2 in sortedRanks \
+					and sortedRanks[i]-3 in sortedRanks \
+					and sortedRanks[i]-4 in sortedRanks:
+				return sortedRanks[i]
+			else:
+				i-=1
 
-	else:
-		return 0
+	# special case for wheel
+	if wheel(sortedRanks):
+		return 5
+	return 0
 
 
 def wheel(ranks):
@@ -299,5 +300,13 @@ class HandScores(Enum):
 	STRAIGHT_FLUSH = 8
 
 
+class HandRanks(Enum):
+	TEN = 10
+	JACK = 11
+	QUEEN = 12
+	KING = 13
+	ACE = 14
+
+
 if __name__ == "__main__":
-	test("As5h", "AdAc", "QcJc2h3d4d")
+	test("6s7h", "AdAc", "As2c3c4h5d")
