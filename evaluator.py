@@ -71,7 +71,7 @@ def trips(ranks):
 def twoPair(ranks):
 	pairs = ()
 	uniqueRanks = set(ranks)
-	print(uniqueRanks)
+	# print(uniqueRanks)
 	for rank in uniqueRanks:
 		if (ranks.count(rank) == 2):
 			pairs += (rank,)

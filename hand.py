@@ -11,8 +11,8 @@ class Hand(object):
 	def getSuits(self):
 		return self.card1.suit, self.card2.suit
 
-	def to_string(self):
-		return self.card1.to_string() + self.card2.to_string()
+	def to_string(self, pretty=True):
+		return self.card1.to_string(pretty=pretty) + self.card2.to_string(pretty=pretty)
 
 	def print(self):
 		print(self.to_string())

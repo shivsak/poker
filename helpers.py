@@ -64,11 +64,40 @@ def printHandEvaluation(handEvaluation):
 
 
 #print the Deck as it is currently
-def printDeck(deck):
+def printDeck(deck, pretty=True):
 	print("")
 	print("******** DECK *********")
 	for card in deck.deck:
-		print (card.to_string(), end=" ")
+		print (card.to_string(pretty=pretty), end=" ")
 	print("")
+	print("***********************")
+	print("")
+
+
+# prints a given Hand
+def printHand(hand, pretty=True):
+	cards = hand.card1, hand.card2
+	printCards(cards, pretty=pretty)
+
+# print a list of Card objects
+def printCards(cards, pretty=True):
+	print("")
+	print("******** Cards *********")
+	for card in cards:
+		print (card.to_string(pretty=pretty), end=" ")
+	print("")
+	print("***********************")
+	print("")
+
+
+def printPlayerInfo(player):
+	print("")
+	print("******** Player *********")
+	if player.name:
+		print("Name: " + str(player.name))
+	if player.chips >= 0:
+		print("Chips: " + str(player.chips))
+	if player.hand:
+		print("Hand: " + str(player.hand.to_string(pretty=True)))
 	print("***********************")
 	print("")

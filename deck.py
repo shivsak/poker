@@ -37,9 +37,10 @@ class Deck(object):
 	def addCardToDeck(self, card):
 		self.deck.append(card)
 
+
 if __name__ == "__main__":
 	d = Deck()
-	printDeck(d)
 	d.shuffle()
 	printDeck(d)
+
 	print(d.dealTopCard().to_string())

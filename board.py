@@ -2,7 +2,7 @@
 
 class Board(object):
 	# board is a list of Card objects
-	def __init__(self, board):
+	def __init__(self, board=()):
 		self.board = board
 
 	def to_string(self):

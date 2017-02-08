@@ -11,21 +11,21 @@ def compareHands(heroHand, villainHand, board):
 	# printEvaluations(heroHandEvaluation, villainHandEvaluation)
 
 	if (heroHandEvaluation.evaluation.value > villainHandEvaluation.evaluation.value):
-		heroWins()
+		return heroWins()
 	elif (heroHandEvaluation.evaluation.value == villainHandEvaluation.evaluation.value):
 		if (heroHandEvaluation.highCard > villainHandEvaluation.highCard):
-			heroWins()
+			return heroWins()
 		elif (heroHandEvaluation.highCard < villainHandEvaluation.highCard):
-			villainWins()
+			return villainWins()
 		elif (heroHandEvaluation.highCard == villainHandEvaluation.highCard):
 			if (heroHandEvaluation.secondHighCard > villainHandEvaluation.secondHighCard):
-				heroWins()
+				return heroWins()
 			elif (heroHandEvaluation.secondHighCard < villainHandEvaluation.secondHighCard):
-				villainWins()
+				return villainWins()
 			else:
-				tie()
+				return tie()
 	else:
-		villainWins()
+		return villainWins()
 
 
 def preFlopCompare(heroHand, villainHand):
