@@ -403,7 +403,12 @@ def compare(heroHand, villainHand, board):
 		elif (heroHandEvaluation.highCard < villainHandEvaluation.highCard):
 			villainWins()
 		elif (heroHandEvaluation.highCard == villainHandEvaluation.highCard):
-			tie()
+			if (heroHandEvaluation.secondHighCard > villainHandEvaluation.secondHighCard):
+				heroWins()
+			elif (heroHandEvaluation.secondHighCard < villainHandEvaluation.secondHighCard):
+				villainWins()
+			else:
+				tie()
 	else:
 		villainWins()
 
@@ -467,4 +472,4 @@ class Suits(Enum):
 	DIAMONDS = 'Diamonds'
 
 if __name__ == "__main__":
-	test("3c8d", "4d2h", "Ks2s3s4sKd")
+	test("5s6d", "6s5h", "Ks2s3s4sKd")
