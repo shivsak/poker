@@ -36,6 +36,7 @@ def parseBoard(boardInput):
 def evaluate(hand, board):
 	# Get ranks of all cards
 	ranks = getRanks(hand, board)
+	print(ranks)
 
 	handEval = HandEvaluation(HandScores.HIGH, max(ranks))
 	handEvalPrint = ""
@@ -44,6 +45,7 @@ def evaluate(hand, board):
 	quadsEval = quads(ranks)
 	tripsEval = trips(ranks)
 	pairEval = pair(ranks)
+	straightEval = straight(ranks)
 
 	# Quads
 	if quadsEval != 0:
@@ -52,6 +54,9 @@ def evaluate(hand, board):
 	# Boat
 	elif tripsEval != 0 and pairEval != 0:
 		handEval = HandEvaluation(HandScores.FULL_HOUSE, tripsEval, pairEval)
+
+	elif straightEval != 0:
+		handEval = HandEvaluation(HandScores.STRAIGHT, straightEval)
 
 	# Trips
 	elif tripsEval != 0:
@@ -89,15 +94,41 @@ def trips(ranks):
 
 	return 0
 
+# returns rank of high card of straight or 0 if no straight
+def straight(ranks):
+	# can't make a 5 card straight without a 5 or a 10
+	sortedRanks = sorted(ranks)
+	if 5 in sortedRanks or 10 in sortedRanks:
+		# special case for wheel
+		if wheel(sortedRanks):
+			return 5
+		else:
+			# ranks should have at most 7 elements. So if we check sortedRanks[i]-sortedRanks[i+4]
+			print(sortedRanks)
+			i = len(sortedRanks)-1
+			while i > (len(sortedRanks)-4):
+				print("")
+				if sortedRanks[i]-1 in sortedRanks and sortedRanks[i]-2 in sortedRanks and sortedRanks[i]-3 in sortedRanks and sortedRanks[i]-4 in sortedRanks:
+					return sortedRanks[i]
+				else:
+					i+=1
+
+	else:
+		return 0
 
 
+def wheel(ranks):
+	if 14 in ranks and 2 in ranks and 3 in ranks and 4 in ranks and 5 in ranks:
+		return 5
+	else:
+		return 0
 
 # get ranks of all 7 cards
 def getRanks(hand, board):
 	inputCards = hand.cards() + board.cards()
-	cards = ()
+	cards = []
 	for card in inputCards:
-		cards += (card.getNumericalRank(),)
+		cards.append(card.getNumericalRank())
 
 	return cards
 
@@ -139,6 +170,8 @@ class Hand(object):
 
 
 def getRankString(rank):
+	if rank == 10:
+		return 'T'
 	if rank == 11:
 		return 'J'
 	elif rank == 12:
@@ -172,6 +205,8 @@ class Card(object):
 		print(self.to_string())
 
 	def getNumericalRank(self):
+		if self.rank == 'T':
+			return 10
 		if self.rank == 'J':
 			return 11
 		elif self.rank == 'Q':
@@ -265,4 +300,4 @@ class HandScores(Enum):
 
 
 if __name__ == "__main__":
-	test("AsAh", "AdAc", "Ac6c6h")
+	test("As5h", "AdAc", "QcJc2h3d4d")
