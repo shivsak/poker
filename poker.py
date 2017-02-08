@@ -12,7 +12,7 @@ def test(heroHandInput, villainHandInput, boardInput):
 	print("Villain's Hand: " + villainHand.to_string())
 	print("Board: " + board.to_string())
 	print("")
-	print("Hero's hand evaluates to: " + evaluate(heroHand, board))
+	print("Hero's hand evaluates to: " + evaluate(heroHand, board).getEvalString())
 
 
 # Parse the board
@@ -32,20 +32,24 @@ def parseBoard(boardInput):
 
 	return board
 
+
+def printHandEvaluation(handEvaluation):
+	print(handEvaluation.getEvalString())
+
+
 # Evaluate using Hand1, Board (array of 5 cards)
 def evaluate(hand, board):
 	# Get ranks of all cards
 	ranks = getRanks(hand, board)
-	print(ranks)
 
 	handEval = HandEvaluation(HandScores.HIGH, max(ranks))
-	handEvalPrint = ""
 
 	# Quads
 	quadsEval = quads(ranks)
+	flushEval = flush(hand, board)
+	straightEval = straight(ranks)
 	tripsEval = trips(ranks)
 	pairEval = pair(ranks)
-	straightEval = straight(ranks)
 
 	# Quads
 	if quadsEval != 0:
@@ -55,6 +59,11 @@ def evaluate(hand, board):
 	elif tripsEval != 0 and pairEval != 0:
 		handEval = HandEvaluation(HandScores.FULL_HOUSE, tripsEval, pairEval)
 
+	# Flush
+	elif flushEval != 0:
+		handEval = HandEvaluation(HandScores.FLUSH, flushEval)
+
+	# Straight
 	elif straightEval != 0:
 		handEval = HandEvaluation(HandScores.STRAIGHT, straightEval)
 
@@ -65,9 +74,9 @@ def evaluate(hand, board):
 	elif pairEval != 0:
 		handEval = HandEvaluation(HandScores.PAIR, pairEval)
 
-	handEvalPrint = handEval.getEvalString()
+	printHandEvaluation(handEval)
 
-	return handEvalPrint
+	return handEval
 
 def quads(ranks):
 
@@ -86,7 +95,6 @@ def pair(ranks):
 	return 0
 
 
-
 def trips(ranks):
 	for rank in ranks:
 		if (ranks.count(rank)) == 3:
@@ -94,23 +102,22 @@ def trips(ranks):
 
 	return 0
 
+
 # returns rank of high card of straight or 0 if no straight
 def straight(ranks):
 	# can't make a 5 card straight without a 5 or a 10
 	sortedRanks = sorted(ranks)
 	if 5 in sortedRanks or 10 in sortedRanks:
 		# ranks should have at most 7 elements. So if we check sortedRanks[i]-sortedRanks[i+4]
-		print(sortedRanks)
 		i = len(sortedRanks)-1
 		while i > (len(sortedRanks)-4):
-			print("")
 			if sortedRanks[i]-1 in sortedRanks\
 					and sortedRanks[i]-2 in sortedRanks \
 					and sortedRanks[i]-3 in sortedRanks \
 					and sortedRanks[i]-4 in sortedRanks:
 				return sortedRanks[i]
 			else:
-				i-=1
+				i -= 1
 
 	# special case for wheel
 	if wheel(sortedRanks):
@@ -118,11 +125,44 @@ def straight(ranks):
 	return 0
 
 
+# The Wheel is a straight from A-5.
 def wheel(ranks):
 	if 14 in ranks and 2 in ranks and 3 in ranks and 4 in ranks and 5 in ranks:
 		return 5
 	else:
 		return 0
+
+
+# Checks if hand and board make a flush. Returns highest pocket card of the flushed suit.
+def flush(hand, board):
+	allSuits = hand.getSuits() + board.getSuits()
+
+	for suit in Suits:
+		if allSuits.count(suit) >= 5:
+			return findHighestSuitedCardInHand(hand, suit)
+
+	return 0
+
+
+def findHighestSuitedCardInHand(hand, suit):
+	highestRank = 0
+	if hand.card1.suit == suit:
+		highestRank = hand.card1.rank
+		if hand.card2.suit == suit and hand.card2.rank > hand.card1.rank:
+			highestRank = hand.card2.rank
+	else:
+		if hand.card2.suit == suit:
+			highestRank = hand.card2.rank
+
+	return highestRank
+
+
+# Takes a list of Suit objects and prints the suits
+def printSuits(suits):
+	for suit in suits:
+		print(suit.value, end=" ")
+	print("")
+
 
 # get ranks of all 7 cards
 def getRanks(hand, board):
@@ -133,6 +173,7 @@ def getRanks(hand, board):
 
 	return cards
 
+
 # Parse Card
 # Card must be entered as AsKs, 6d7h, etc
 def parseCard(card):
@@ -142,6 +183,7 @@ def parseCard(card):
 
 	card = Card(cardArray[0], cardArray[1])
 	card.print()
+
 
 # Parse Hand
 def parseHand(hand):
@@ -154,14 +196,16 @@ def parseHand(hand):
 	return Hand(card1, card2)
 
 
-
 class Hand(object):
 	def __init__(self, card1, card2):
 		self.card1 = card1
 		self.card2 = card2
 
 	def cards(self):
-		return (self.card1, self.card2)
+		return self.card1, self.card2
+
+	def getSuits(self):
+		return self.card1.suit, self.card2.suit
 
 	def to_string(self):
 		return self.card1.to_string() + self.card2.to_string()
@@ -184,23 +228,24 @@ def getRankString(rank):
 	else:
 		return str(rank)
 
+
 class Card(object):
 	def __init__(self, rank, suit):
 		if suit == 's':
-			self.suit = 'SPADES'
+			self.suit = Suits.SPADES
 		elif suit == 'c':
-			self.suit = 'CLUBS'
+			self.suit = Suits.CLUBS
 		elif suit == 'h':
-			self.suit = 'HEARTS'
+			self.suit = Suits.HEARTS
 		elif suit == 'd':
-			self.suit = 'DIAMONDS'
+			self.suit = Suits.DIAMONDS
 		else:
 			raise ValueError("Invalid card suit input")
 
 		self.rank = rank
 
 	def to_string(self):
-		return "{}{}".format(self.rank, self.suit[0].lower())
+		return "{}{}".format(self.rank, self.suit.value[0].lower())
 
 	def print(self):
 		print(self.to_string())
@@ -219,6 +264,10 @@ class Card(object):
 		else:
 			return int(self.rank)
 
+	def getSuit(self):
+		return self.suit
+
+
 class Board(object):
 	# board is a list of Card objects
 	def __init__(self, board):
@@ -230,6 +279,12 @@ class Board(object):
 			boardString += card.to_string() + ", "
 
 		return boardString
+
+	def getSuits(self):
+		boardSuits = ()
+		for card in self.board:
+			boardSuits += (card.suit,)
+		return boardSuits
 
 	def cards(self):
 		return self.board
@@ -251,7 +306,7 @@ class Deck(object):
 			print(card.to_string(), end=" ")
 
 
-class HandEvaluation():
+class HandEvaluation(object):
 	def __init__(self, eval, high, secondHigh=0):
 		# eval contains an evaluation of the hand
 		self.evaluation = eval
@@ -259,6 +314,7 @@ class HandEvaluation():
 		self.highCard = high
 		# secondHigh contains the 'kicker' or pair in full houses or second pair in two pairs
 		self.secondHighCard = secondHigh
+
 
 	def getEvalRanking(self):
 		return 0
@@ -287,7 +343,6 @@ class HandEvaluation():
 			return "No Hand Evaluation String found"
 
 
-
 class HandScores(Enum):
 	HIGH = 0
 	PAIR = 1
@@ -308,5 +363,11 @@ class HandRanks(Enum):
 	ACE = 14
 
 
+class Suits(Enum):
+	SPADES = 'Spades'
+	CLUBS = 'Clubs'
+	HEARTS = 'Hearts'
+	DIAMONDS = 'Diamonds'
+
 if __name__ == "__main__":
-	test("6s7h", "AdAc", "As2c3c4h5d")
+	test("Ac7s", "AdAc", "As2s3s4s5d")
