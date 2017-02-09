@@ -1,6 +1,6 @@
 # Card.py
 
-from enumerators import Suits
+from enumerators import *
 
 # for pretty printing
 PRETTY_SUITS = {
@@ -25,7 +25,20 @@ class Card(object):
 		else:
 			raise ValueError("Invalid card suit input")
 
-		self.rank = rank
+
+		# Get Rank
+		if rank == "T":
+			self.rank = 10
+		elif rank == "J":
+			self.rank = 11
+		elif rank == "Q":
+			self.rank = 12
+		elif rank == "K":
+			self.rank = 13
+		elif rank == "A":
+			self.rank = 14
+		else:
+			self.rank = int(rank)
 
 	def to_string(self, pretty=False):
 		if pretty:
@@ -59,6 +72,9 @@ class Card(object):
 	def to_pretty_string(self):
 		suit = PRETTY_SUITS[self.suit]
 		return "{}{}".format(self.rank, suit)
+
+	def __eq__(self, other):
+		return self.rank == other.rank and self.suit == other.suit
 
 
 if __name__ == '__main__':

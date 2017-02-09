@@ -5,23 +5,27 @@ from parser import *
 from evaluator import evaluate
 from enumerators import *
 from deck import Deck
+import time
 
-if __name__ == "__main__":
 
 
-	heroHand = Hand(Card("A", Suits.DIAMONDS), Card("K", Suits.DIAMONDS))
-	villainHand = Hand(Card("7", Suits.DIAMONDS), Card("2", Suits.SPADES))
-
-	printHand(heroHand)
-	printHand(villainHand)
+def simulate(heroHand, villainHand, numberOfSimulations=1000):
+	start_time = time.time()
 
 	# run simulations on board to see who would win how many times
-	numberOfSimulations = 10000
 	heroWins = 0
 	villainWins = 0
+	numTies = 0
 
 	for i in range(numberOfSimulations):
 		deck = Deck()
+		deck.deck.remove(heroHand.card1)
+		deck.deck.remove(heroHand.card2)
+		deck.deck.remove(villainHand.card1)
+		deck.deck.remove(villainHand.card2)
+
+		# Remove dealt cards from Deck
+
 		deck.shuffle()
 		board = Board()
 		for j in range(5):
@@ -31,11 +35,32 @@ if __name__ == "__main__":
 			heroWins += 1
 		elif result == -1:
 			villainWins += 1
+		else:
+			numTies += 1
 
 	print("hero wins " + str(heroWins) + " times out of " + str(numberOfSimulations))
+	print("")
+	print("hero has " + str(heroWins * 100 / numberOfSimulations) + " equity")
+	print("")
+	print("--- %s seconds ---" % (time.time() - start_time))
 
+	return heroWins/numberOfSimulations, numTies/numberOfSimulations, villainWins/numberOfSimulations
+
+
+
+if __name__ == "__main__":
+
+	heroHand = Hand(Card("A", Suits.SPADES), Card("A", Suits.DIAMONDS))
+	villainHand = Hand(Card("7", Suits.HEARTS), Card("7", Suits.CLUBS))
+
+	printHand(heroHand)
+	printHand(villainHand)
+
+	heroEquity = simulate(heroHand, villainHand, numberOfSimulations=5000)
+	print(heroEquity)
 
 	# test("5c2d", "3h5h", "Ks8s5s4s9d")
+
 
 
 

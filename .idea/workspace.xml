@@ -14,39 +14,10 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="poker.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/poker.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="11" column="54" lean-forward="false" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="evaluator.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/evaluator.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="74" column="4" lean-forward="false" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>flush(</find>
-      <find>find hig</find>
-      <find>print(fl</find>
-      <find>printhan</find>
-      <find>handev</find>
-      <find>getE</find>
       <find>getEvalString</find>
       <find>heroh</find>
       <find>hero win</find>
@@ -69,8 +40,14 @@
       <find>p</find>
       <find>printdec</find>
       <find>print</find>
-      <find>prn</find>
       <find>hero wins</find>
+      <find>prn</find>
+      <find>dec</find>
+      <find>deck</find>
+      <find>spade</find>
+      <find>num</find>
+      <find>checking now</find>
+      <find>check</find>
     </findStrings>
     <replaceStrings>
       <replace>str(getRankString(self.secondHighCard))</replace>
@@ -85,7 +62,6 @@
         <option value="$PROJECT_DIR$/hand_evaluations.py" />
         <option value="$PROJECT_DIR$/parser.py" />
         <option value="$PROJECT_DIR$/deck.py" />
-        <option value="$PROJECT_DIR$/card.py" />
         <option value="$PROJECT_DIR$/deal.py" />
         <option value="$PROJECT_DIR$/dealer.py" />
         <option value="$PROJECT_DIR$/hand.py" />
@@ -96,6 +72,7 @@
         <option value="$PROJECT_DIR$/board.py" />
         <option value="$PROJECT_DIR$/win_cases.py" />
         <option value="$PROJECT_DIR$/evaluator.py" />
+        <option value="$PROJECT_DIR$/card.py" />
         <option value="$PROJECT_DIR$/poker.py" />
       </list>
     </option>
@@ -138,7 +115,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="enu&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/enumerators.py&#10;enumer&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/enumerators.py&#10;boar&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/board.py&#10;help&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/helpers.py&#10;pla&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/player.py&#10;poker&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/poker.py&#10;helper&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/helpers.py&#10;hel&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/helpers.py&#10;dec&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/deck.py&#10;dealer&#9;null&#9;null&#10;deck&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/deck.py&#10;Card.&#9;FILE&#9;file:///Users/shivsakhuja/anaconda3/lib/python3.5/site-packages/deuces/card.py&#10;card&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/card.py&#10;car&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/card.py&#10;comp&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/compare.py&#10;printhandev&#9;null&#9;null&#10;eva&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/evaluator.py&#10;hand&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/hand.py&#10;handeva&#9;null&#9;null&#10;compare&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/compare.py&#10;enumerators.p&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/enumerators.py&#10;card.&#9;FILE&#9;file:///Users/shivsakhuja/anaconda3/lib/python3.5/site-packages/deuces/card.py&#10;straight&#9;null&#9;null&#10;linearregre&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="car&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/card.py&#10;poker&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/poker.py&#10;enu&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/enumerators.py&#10;enumer&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/enumerators.py&#10;boar&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/board.py&#10;help&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/helpers.py&#10;pla&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/player.py&#10;helper&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/helpers.py&#10;hel&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/helpers.py&#10;dec&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/deck.py&#10;dealer&#9;null&#9;null&#10;deck&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/deck.py&#10;Card.&#9;FILE&#9;file:///Users/shivsakhuja/anaconda3/lib/python3.5/site-packages/deuces/card.py&#10;card&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/card.py&#10;comp&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/compare.py&#10;printhandev&#9;null&#9;null&#10;eva&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/evaluator.py&#10;hand&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/hand.py&#10;handeva&#9;null&#9;null&#10;compare&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/compare.py&#10;enumerators.p&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/enumerators.py&#10;card.&#9;FILE&#9;file:///Users/shivsakhuja/anaconda3/lib/python3.5/site-packages/deuces/card.py&#10;straight&#9;null&#9;null&#10;linearregre&#9;null&#9;null" />
     <property name="FullScreen" value="true" />
   </component>
   <component name="RunManager" selected="Python.poker">
@@ -400,7 +377,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -408,7 +385,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3235639" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3235639" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -513,14 +490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/card.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/deck.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -544,7 +513,7 @@
         <state relative-caret-position="345">
           <caret line="23" column="8" lean-forward="true" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
           <folding>
-            <element signature="e#11#32#0" expanded="true" />
+            <element signature="e#11#32#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -554,7 +523,7 @@
         <state relative-caret-position="255">
           <caret line="17" column="53" lean-forward="true" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
           <folding>
-            <element signature="e#13#34#0" expanded="true" />
+            <element signature="e#13#34#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -611,10 +580,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/card.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1140">
+          <caret line="76" column="29" lean-forward="false" selection-start-line="76" selection-start-column="29" selection-end-line="76" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/poker.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="11" column="54" lean-forward="false" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
+        <state relative-caret-position="156">
+          <caret line="58" column="70" lean-forward="false" selection-start-line="58" selection-start-column="70" selection-end-line="58" selection-end-column="70" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
