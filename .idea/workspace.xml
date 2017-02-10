@@ -14,15 +14,33 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="poker.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/poker.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-756">
+              <caret line="31" column="22" lean-forward="false" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="board.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/board.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="8" lean-forward="false" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getEvalString</find>
-      <find>heroh</find>
-      <find>hero win</find>
-      <find>compare</find>
-      <find>printEv</find>
       <find>compare hero</find>
       <find>tie</find>
       <find>two</find>
@@ -48,6 +66,11 @@
       <find>num</find>
       <find>checking now</find>
       <find>check</find>
+      <find>simul</find>
+      <find>incorrect f</find>
+      <find>flop.boar</find>
+      <find>5000</find>
+      <find>flop</find>
     </findStrings>
     <replaceStrings>
       <replace>str(getRankString(self.secondHighCard))</replace>
@@ -115,7 +138,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="car&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/card.py&#10;poker&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/poker.py&#10;enu&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/enumerators.py&#10;enumer&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/enumerators.py&#10;boar&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/board.py&#10;help&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/helpers.py&#10;pla&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/player.py&#10;helper&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/helpers.py&#10;hel&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/helpers.py&#10;dec&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/deck.py&#10;dealer&#9;null&#9;null&#10;deck&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/deck.py&#10;Card.&#9;FILE&#9;file:///Users/shivsakhuja/anaconda3/lib/python3.5/site-packages/deuces/card.py&#10;card&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/card.py&#10;comp&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/compare.py&#10;printhandev&#9;null&#9;null&#10;eva&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/evaluator.py&#10;hand&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/hand.py&#10;handeva&#9;null&#9;null&#10;compare&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/compare.py&#10;enumerators.p&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/enumerators.py&#10;card.&#9;FILE&#9;file:///Users/shivsakhuja/anaconda3/lib/python3.5/site-packages/deuces/card.py&#10;straight&#9;null&#9;null&#10;linearregre&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/poker.py&#10;car&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/card.py&#10;poker&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/poker.py&#10;enu&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/enumerators.py&#10;enumer&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/enumerators.py&#10;boar&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/board.py&#10;help&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/helpers.py&#10;pla&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/player.py&#10;helper&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/helpers.py&#10;hel&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/helpers.py&#10;dec&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/deck.py&#10;dealer&#9;null&#9;null&#10;deck&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/deck.py&#10;Card.&#9;FILE&#9;file:///Users/shivsakhuja/anaconda3/lib/python3.5/site-packages/deuces/card.py&#10;card&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/card.py&#10;comp&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/compare.py&#10;printhandev&#9;null&#9;null&#10;eva&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/evaluator.py&#10;hand&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/hand.py&#10;handeva&#9;null&#9;null&#10;compare&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/compare.py&#10;enumerators.p&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/enumerators.py&#10;card.&#9;FILE&#9;file:///Users/shivsakhuja/anaconda3/lib/python3.5/site-packages/deuces/card.py&#10;straight&#9;null&#9;null&#10;linearregre&#9;null&#9;null" />
     <property name="FullScreen" value="true" />
   </component>
   <component name="RunManager" selected="Python.poker">
@@ -377,7 +400,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -544,14 +567,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/board.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/compare.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -588,10 +603,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/board.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="8" lean-forward="false" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/poker.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="58" column="70" lean-forward="false" selection-start-line="58" selection-start-column="70" selection-end-line="58" selection-end-column="70" />
+        <state relative-caret-position="-756">
+          <caret line="31" column="22" lean-forward="false" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
