@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c4d500a-52c6-4fe0-a7f2-953def7b6752" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simulator.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/compare.py" afterPath="$PROJECT_DIR$/compare.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/enumerators.py" afterPath="$PROJECT_DIR$/enumerators.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/evaluator.py" afterPath="$PROJECT_DIR$/evaluator.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hand.py" afterPath="$PROJECT_DIR$/hand.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/helpers.py" afterPath="$PROJECT_DIR$/helpers.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/poker.py" afterPath="$PROJECT_DIR$/poker.py" />
     </list>
@@ -20,33 +24,23 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="poker.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/poker.py">
+      <file leaf-file-name="evaluator.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/evaluator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+            <state relative-caret-position="819">
+              <caret line="358" column="77" lean-forward="false" selection-start-line="358" selection-start-column="77" selection-end-line="358" selection-end-column="77" />
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#16#46#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="evaluator.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/evaluator.py">
+      <file leaf-file-name="enumerators.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/enumerators.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="142" column="16" lean-forward="true" selection-start-line="142" selection-start-column="16" selection-end-line="143" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="helpers.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/helpers.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-570">
-              <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+            <state relative-caret-position="504">
+              <caret line="66" column="34" lean-forward="false" selection-start-line="66" selection-start-column="34" selection-end-line="66" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -56,17 +50,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sorted</find>
-      <find>pair(</find>
-      <find>pair</find>
-      <find>class Card</find>
-      <find>suits</find>
-      <find>getrankstrin</find>
-      <find>clas</find>
-      <find>pre</find>
-      <find>prett</find>
-      <find>p</find>
-      <find>printdec</find>
       <find>hero wins</find>
       <find>prn</find>
       <find>dec</find>
@@ -86,6 +69,17 @@
       <find>printcard</find>
       <find>cont</find>
       <find>print</find>
+      <find>getranks</find>
+      <find>twop</find>
+      <find>lamb</find>
+      <find>lambda</find>
+      <find>[</find>
+      <find>paired</find>
+      <find>hand</find>
+      <find>hand.ran</find>
+      <find>flush</find>
+      <find>findhig</find>
+      <find>whee</find>
     </findStrings>
     <replaceStrings>
       <replace>str(getRankString(self.secondHighCard))</replace>
@@ -105,16 +99,17 @@
         <option value="$PROJECT_DIR$/deck.py" />
         <option value="$PROJECT_DIR$/deal.py" />
         <option value="$PROJECT_DIR$/dealer.py" />
-        <option value="$PROJECT_DIR$/hand.py" />
         <option value="$PROJECT_DIR$/player.py" />
-        <option value="$PROJECT_DIR$/compare.py" />
-        <option value="$PROJECT_DIR$/enumerators.py" />
         <option value="$PROJECT_DIR$/board.py" />
         <option value="$PROJECT_DIR$/win_cases.py" />
         <option value="$PROJECT_DIR$/card.py" />
+        <option value="$PROJECT_DIR$/compare.py" />
+        <option value="$PROJECT_DIR$/simulator.py" />
         <option value="$PROJECT_DIR$/helpers.py" />
-        <option value="$PROJECT_DIR$/evaluator.py" />
         <option value="$PROJECT_DIR$/poker.py" />
+        <option value="$PROJECT_DIR$/hand.py" />
+        <option value="$PROJECT_DIR$/enumerators.py" />
+        <option value="$PROJECT_DIR$/evaluator.py" />
       </list>
     </option>
   </component>
@@ -156,10 +151,10 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/evaluator.py&#10;hand&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/hand_evaluations.py&#10;poker&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/poker.py&#10;card&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/card.py&#10;poker.p&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/poker.py&#10;hand.p&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/hand.py&#10;helper&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/helpers.py&#10;straight&#9;null&#9;null&#10;car&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/card.py&#10;enu&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/enumerators.py&#10;enumer&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/enumerators.py&#10;boar&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/board.py&#10;help&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/helpers.py&#10;pla&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/player.py&#10;hel&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/helpers.py&#10;dec&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/deck.py&#10;dealer&#9;null&#9;null&#10;deck&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/deck.py&#10;Card.&#9;FILE&#9;file:///Users/shivsakhuja/anaconda3/lib/python3.5/site-packages/deuces/card.py&#10;comp&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/compare.py&#10;printhandev&#9;null&#9;null&#10;eva&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/evaluator.py&#10;handeva&#9;null&#9;null&#10;compare&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/compare.py&#10;enumerators.p&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/enumerators.py&#10;card.&#9;FILE&#9;file:///Users/shivsakhuja/anaconda3/lib/python3.5/site-packages/deuces/card.py&#10;linearregre&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="hand.&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/hand.py&#10;getranks&#9;null&#9;null&#10;getrank&#9;null&#9;null&#10;enum&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/enumerators.py&#10;evalu&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/evaluator.py&#10;sim&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/simulator.py&#10;evaluat&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/evaluator.py&#10;hand&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/hand_evaluations.py&#10;poker&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/poker.py&#10;card&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/card.py&#10;poker.p&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/poker.py&#10;hand.p&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/hand.py&#10;helper&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/helpers.py&#10;straight&#9;null&#9;null&#10;car&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/card.py&#10;enu&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/enumerators.py&#10;enumer&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/enumerators.py&#10;boar&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/board.py&#10;help&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/helpers.py&#10;pla&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/player.py&#10;hel&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/helpers.py&#10;dec&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/deck.py&#10;dealer&#9;null&#9;null&#10;deck&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/deck.py&#10;Card.&#9;FILE&#9;file:///Users/shivsakhuja/anaconda3/lib/python3.5/site-packages/deuces/card.py&#10;comp&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/compare.py&#10;printhandev&#9;null&#9;null&#10;eva&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/evaluator.py&#10;handeva&#9;null&#9;null&#10;compare&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/compare.py&#10;enumerators.p&#9;FILE&#9;file:///Users/shivsakhuja/Desktop/Poker/enumerators.py&#10;card.&#9;FILE&#9;file:///Users/shivsakhuja/anaconda3/lib/python3.5/site-packages/deuces/card.py&#10;linearregre&#9;null&#9;null" />
     <property name="FullScreen" value="true" />
   </component>
-  <component name="RunManager" selected="Python.poker">
+  <component name="RunManager" selected="Python.evaluator">
     <configuration default="false" name="poker" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -194,23 +189,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="card" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Poker" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/card.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="dealer" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -241,6 +219,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Poker" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/player.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="evaluator" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Poker" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/evaluator.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -382,17 +377,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.poker" />
       <item index="1" class="java.lang.String" itemvalue="Python.deck" />
-      <item index="2" class="java.lang.String" itemvalue="Python.card" />
-      <item index="3" class="java.lang.String" itemvalue="Python.dealer" />
-      <item index="4" class="java.lang.String" itemvalue="Python.player" />
+      <item index="2" class="java.lang.String" itemvalue="Python.dealer" />
+      <item index="3" class="java.lang.String" itemvalue="Python.player" />
+      <item index="4" class="java.lang.String" itemvalue="Python.evaluator" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.poker" />
-        <item index="1" class="java.lang.String" itemvalue="Python.player" />
-        <item index="2" class="java.lang.String" itemvalue="Python.dealer" />
-        <item index="3" class="java.lang.String" itemvalue="Python.deck" />
-        <item index="4" class="java.lang.String" itemvalue="Python.card" />
+        <item index="0" class="java.lang.String" itemvalue="Python.evaluator" />
+        <item index="1" class="java.lang.String" itemvalue="Python.poker" />
+        <item index="2" class="java.lang.String" itemvalue="Python.player" />
+        <item index="3" class="java.lang.String" itemvalue="Python.dealer" />
+        <item index="4" class="java.lang.String" itemvalue="Python.deck" />
       </list>
     </recent_temporary>
   </component>
@@ -423,6 +418,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3235639" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -435,7 +431,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -494,6 +489,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+          <folding>
+            <element signature="e#11#24#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -514,16 +512,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compare.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-          <folding>
-            <element signature="e#14#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/win_cases.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -539,30 +527,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hand.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/board.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helpers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-570">
-          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hand_evaluations.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -571,28 +535,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/enumerators.py">
+    <entry file="file://$PROJECT_DIR$/compare.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        <state relative-caret-position="30">
+          <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/evaluator.py">
+    <entry file="file://$PROJECT_DIR$/simulator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="142" column="16" lean-forward="true" selection-start-line="142" selection-start-column="16" selection-end-line="143" selection-end-column="16" />
+        <state relative-caret-position="429">
+          <caret line="69" column="69" lean-forward="false" selection-start-line="69" selection-start-column="69" selection-end-line="69" selection-end-column="69" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/board.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="8" lean-forward="false" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/poker.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+        <state relative-caret-position="60">
+          <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.5/site-packages/statsmodels/sandbox/stats/multicomp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="831" column="8" lean-forward="false" selection-start-line="831" selection-start-column="8" selection-end-line="831" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helpers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="51" column="4" lean-forward="false" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hand.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+          <folding>
+            <element signature="e#11#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/enumerators.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="66" column="34" lean-forward="false" selection-start-line="66" selection-start-column="34" selection-end-line="66" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/evaluator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="819">
+          <caret line="358" column="77" lean-forward="false" selection-start-line="358" selection-start-column="77" selection-end-line="358" selection-end-column="77" />
+          <folding>
+            <element signature="e#16#46#0" expanded="true" />
           </folding>
         </state>
       </provider>

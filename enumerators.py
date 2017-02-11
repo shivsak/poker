@@ -48,3 +48,20 @@ class Suits(Enum):
 	CLUBS = 'Clubs'
 	HEARTS = 'Hearts'
 	DIAMONDS = 'Diamonds'
+
+
+class Texture(Enum):
+	MONOTONE = 'Monotone'
+	CONNECTED = 'Connected' #3 to a straight (Example: 678, TJQ, etc)
+	QUADDED = 'Quadded'
+	TRIPPED = 'Tripped'
+	PAIRED = 'Paired'
+	THREE_FLUSH = 'ThreeFlush'
+	FOUR_FLUSH = 'FourFlush'
+	FIVE_FLUSHED = 'FiveFlushed'
+	DOUBLE_PAIRED = 'DoublePaired'
+	RAINBOW = 'Rainbow'
+	FIVE_STRAIGHT = 'FiveStraight'
+	FOUR_CONNECTED = 'FourConnected'
+	THREE_CONNECTED = 'ThreeConnected'
+	GUTSHOT_FOUR_STRAIGHT = 'GutshotFourStraight'

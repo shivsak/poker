@@ -1,6 +1,6 @@
 # compare.py
 
-from poker import evaluate
+from evaluator import evaluate
 from win_cases import *
 
 # Compare hero's hand and villain's hand on the current board

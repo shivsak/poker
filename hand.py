@@ -1,9 +1,21 @@
 # hand.py
 
+import random
+from enumerators import Suits
+from card import Card
+
 class Hand(object):
-	def __init__(self, card1, card2):
-		self.card1 = card1
-		self.card2 = card2
+	def __init__(self, card1=None, card2=None):
+		if card1:
+			self.card1 = card1
+		else:
+			self.card1 = Card(2 + int(random.random() * 15), random.choice(list(Suits)))
+
+		if card2:
+			self.card2 = card2
+		else:
+			self.card2 = Card(2 + int(random.random() * 15), random.choice(list(Suits)))
+
 
 	def cards(self):
 		return self.card1, self.card2

@@ -58,6 +58,15 @@ def getRanks(hand, board):
 	return cards
 
 
+# get ranks from a list of cards
+def getRanksFromCards(inputCards):
+	cards = []
+	for card in inputCards:
+		cards.append(card.getNumericalRank())
+
+	return cards
+
+
 # prints the hand evaluation string
 def printHandEvaluation(handEvaluation):
 	print(handEvaluation.getEvalString())

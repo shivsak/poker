@@ -3,6 +3,8 @@
 from hand_evaluations import *
 from helpers import *
 from card import *
+from board import Board
+from hand import Hand
 
 
 # Evaluate using Hand1, Board (array of 5 cards)
@@ -187,3 +189,172 @@ def flush(hand, board):
 
 	return 0
 
+
+"""
+These methods evaluate things that are not obvious
+"""
+
+def quadded(board):
+	if len(board.board) < 4:
+		return False
+	else:
+		return quads(getRanksFromCards(board.cards()))
+
+
+def tripped(board):
+	if len(board.board) < 3:
+		return False
+	else:
+		return trips(getRanksFromCards(board.cards())) != 0
+
+
+def doublePaired(board):
+	if len(board.board) < 4:
+		return False
+	else:
+		return twoPair(getRanksFromCards(board.cards())) != 0
+
+
+def paired(board):
+	if len(board.board) < 2:
+		return False
+	else:
+		return pair(getRanksFromCards(board.cards())) != 0
+
+def fourFlushed(board):
+	if len(board.board) < 4:
+		return False
+	else:
+		boardSuits = board.getSuits()
+		for suit in Suits:
+			if boardSuits.count(suit) == 4:
+				return True
+
+
+def fiveFlushed(board):
+	if len(board.board) < 5:
+		return False
+	else:
+		boardSuits = board.getSuits()
+		for suit in Suits:
+			if boardSuits.count(suit) == 5:
+				return True
+
+
+def threeFlushed(board):
+	if len(board.board) < 3:
+		return False
+	else:
+		boardSuits = board.getSuits()
+		for suit in Suits:
+			if boardSuits.count(suit) == 3:
+				return True
+
+def straighted(board):
+	if len(board.board) < 3:
+		return 0
+	else:
+		sortedRanks = sorted(list(map(lambda x: x.rank, board.board)))
+		i = len(sortedRanks)-1
+		numberOfConnectedCards = 0
+		while i>0:
+			if sortedRanks[i] - 1 in sortedRanks and \
+				sortedRanks[i] - 2 in sortedRanks and \
+				sortedRanks[i] - 3 in sortedRanks and \
+				sortedRanks[i] - 4 in sortedRanks:
+					numberOfConnectedCards = max(numberOfConnectedCards, 5)
+			elif sortedRanks[i] - 1 in sortedRanks and \
+					sortedRanks[i] - 2 in sortedRanks and \
+					sortedRanks[i] - 3 in sortedRanks:
+					numberOfConnectedCards = max(numberOfConnectedCards, 4)
+			elif sortedRanks[i] - 1 in sortedRanks and \
+					sortedRanks[i] - 2 in sortedRanks and \
+					sortedRanks[i] - 3 in sortedRanks:
+					numberOfConnectedCards = max(numberOfConnectedCards, 3)
+			else:
+				numberOfConnectedCards = max(numberOfConnectedCards, 0)
+
+			print(sortedRanks[i])
+			i -= 1
+
+		wheel = wheeled(board)
+
+		return max(numberOfConnectedCards, wheel)
+
+
+def wheeled(board):
+	if len(board.board) < 3:
+		return 0
+	else:
+		sortedRanks = sorted(list(map(lambda x: x.rank, board.board)))
+
+		if 14 in sortedRanks and 2 in sortedRanks and 3 in sortedRanks and 4 in sortedRanks and 5 in sortedRanks:
+			return 5
+		if 14 in sortedRanks and 2 in sortedRanks and 3 in sortedRanks and 4 in sortedRanks:
+			return 4
+		if 14 in sortedRanks and 2 in sortedRanks and 3 in sortedRanks:
+			return 3
+
+	return 0
+
+
+		# evaluate board texture
+def boardTexture(board):
+	textures = ()
+
+	# Quads
+	quads = quadded(board)
+	trips = tripped(board)
+	doublePair = doublePaired(board)
+	pair = paired(board)
+	fourFlush = fourFlushed(board)
+	threeFlush = threeFlushed(board)
+	fiveFlush = fiveFlushed(board)
+	straight = straighted(board)
+
+	if quads:
+		textures += (Texture.QUADDED,)
+
+	# Tripped
+	if trips:
+		textures += (Texture.TRIPPED,)
+
+	# Double Paired
+	if doublePair:
+		textures += (Texture.DOUBLE_PAIRED,)
+
+	# Paired
+	if pair and not doublePair:
+		textures += (Texture.PAIRED,)
+
+	# Four flush
+	if fiveFlush:
+		textures += (Texture.FIVE_FLUSHED,)
+
+	# Four flush
+	if fourFlush:
+		textures += (Texture.FOUR_FLUSH,)
+
+	# Four flush
+	if threeFlush:
+		textures += (Texture.THREE_FLUSH,)
+
+	# Three flush
+	if not (threeFlush or fourFlush or fiveFlush):
+		textures += (Texture.RAINBOW,)
+
+	# Straight
+	if straight == 5:
+		textures += (Texture.FIVE_STRAIGHT,)
+	elif straight == 4:
+		textures += (Texture.FOUR_CONNECTED,)
+	elif straight == 3:
+		textures += (Texture.THREE_CONNECTED,)
+
+
+	return textures
+
+
+if __name__ == '__main__':
+	board = Board((Card("A", Suits.SPADES), Card("2", Suits.SPADES), Card("3", Suits.SPADES), Card("5", Suits.SPADES), Card("6", Suits.SPADES)))
+	print(list(map(lambda x: x.value, boardTexture(board))))
