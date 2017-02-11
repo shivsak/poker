@@ -54,9 +54,6 @@ def simulate(heroHand, villainHand, numberOfSimulations=1000, currentBoard=None)
 				deck.deck.remove(topCard)
 		result = compareHands(heroHand, villainHand, board)
 		if result == 1:
-			printCards(board.board, pretty=True)
-			print("hero has " + str(evaluate(heroHand, board).getEvalString()))
-			print("villain has " + str(evaluate(villainHand, board).getEvalString()))
 			heroWins += 1
 		elif result == -1:
 			villainWins += 1
@@ -76,37 +73,16 @@ def simulate(heroHand, villainHand, numberOfSimulations=1000, currentBoard=None)
 
 if __name__ == "__main__":
 
-	heroHand = Hand(Card("A", Suits.SPADES), Card("A", Suits.DIAMONDS))
-	villainHand = Hand(Card("7", Suits.HEARTS), Card("7", Suits.CLUBS))
-	board = Board(board=(Card("7", Suits.DIAMONDS), Card("3", Suits.SPADES), Card("J", Suits.CLUBS), Card("7", Suits.SPADES)))
+	heroHand = Hand(Card("A", Suits.SPADES), Card("2", Suits.SPADES))
+	villainHand = Hand(Card("6", Suits.SPADES), Card("7", Suits.CLUBS))
+	board = Board(board=(Card("3", Suits.SPADES), Card("4", Suits.SPADES), Card("5", Suits.SPADES)))
 
 	printHand(heroHand)
 	printHand(villainHand)
+	printCards(board.board)
 
-	heroEquity = simulate(heroHand, villainHand, numberOfSimulations=100, currentBoard=board)
+	heroEquity = simulate(heroHand, villainHand, numberOfSimulations=1000, currentBoard=board)
 	print(heroEquity)
 
 	# test("5c2d", "3h5h", "Ks8s5s4s9d")
-
-
-
-
-	# Takes string inputs
-def test(heroHandInput, villainHandInput, boardInput):
-	heroHand = parseHand(heroHandInput)
-	villainHand = parseHand(villainHandInput)
-	board = Board(parseBoard(boardInput))
-
-	print("Hero's Hand: " + heroHand.to_string())
-	print("Villain's Hand: " + villainHand.to_string())
-	print("Board: " + board.to_string())
-	print("")
-	print("")
-	printEvaluations(evaluate(heroHand, board), evaluate(villainHand, board))
-	print("")
-	print("")
-
-	# Compare Hero Hand and VillainHand
-	print("******* COMPARE HANDS *********")
-	compareHands(heroHand, villainHand, board)
 

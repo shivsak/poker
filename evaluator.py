@@ -12,6 +12,7 @@ def evaluate(hand, board):
 
 	handEval = HandEvaluation(HandScores.HIGH, max(ranks))
 
+	straightFlushEval = straightFlush(hand, board)
 	quadsEval = quads(ranks)
 	flushEval = flush(hand, board)
 	straightEval = straight(ranks)
@@ -19,8 +20,12 @@ def evaluate(hand, board):
 	twoPairEval = twoPair(ranks)
 	pairEval = pair(ranks)
 
+	# Straight Flush
+	if straightFlushEval != 0:
+		handEval = HandEvaluation(HandScores.STRAIGHT_FLUSH, straightFlushEval)
+
 	# Quads
-	if quadsEval != 0:
+	elif quadsEval != 0:
 		handEval = HandEvaluation(HandScores.QUADS, quadsEval)
 
 	# Boat
@@ -31,7 +36,7 @@ def evaluate(hand, board):
 	elif flushEval != 0:
 		handEval = HandEvaluation(HandScores.FLUSH, flushEval)
 
-	# Straight
+	# Straigh
 	elif straightEval != 0:
 		handEval = HandEvaluation(HandScores.STRAIGHT, straightEval)
 
@@ -112,6 +117,55 @@ def straight(ranks):
 	# special case for wheel
 	if wheel(sortedRanks):
 		return 5
+	return 0
+
+
+# returns rank of high card of straight flush or 0 if no straight flush
+# Input is a list of 5 or more cards
+def straightFlush(hand, board):
+	# can't make a 5 card straight without a 5 or a 10
+	cards = ()
+	cards += hand.cards() + board.cards()
+	sortedCards = sortCardsByRank(cards)
+	if cardsContainRank(cards, 5) or cardsContainRank(cards, 10):
+		# ranks should have at most 7 elements. So if we check sortedRanks[i]-sortedRanks[i+4]
+		i = len(sortedCards)-1
+		while i > (len(sortedCards)-4):
+			# We now know we have a straight with a high of sortedCards[i], now we check if it is a straight flush
+			if Card(sortedCards[i].rank, sortedCards[i].suit) in sortedCards and \
+				Card(sortedCards[i].rank - 1, sortedCards[i].suit) in sortedCards and \
+				Card(sortedCards[i].rank - 2, sortedCards[i].suit) in sortedCards and \
+				Card(sortedCards[i].rank - 3, sortedCards[i].suit) in sortedCards and \
+				Card(sortedCards[i].rank - 4, sortedCards[i].suit) in sortedCards:
+					return sortedCards[i].rank
+			i -= 1
+
+	if wheelStraightFlush(hand, board) != 0:
+		return 5
+
+	# special case for wheel straight flush
+	return 0
+
+
+def wheelStraightFlush(hand, board):
+	# can't make a 5 card straight without a 5 or a 10
+	cards = ()
+	cards += hand.cards() + board.cards()
+	sortedCards = sortCardsByRank(cards)
+	if cardsContainRank(cards, 5):
+		# ranks should have at most 7 elements. So if we check sortedRanks[i]-sortedRanks[i+4]
+		i = len(sortedCards) - 1
+		while i > (len(sortedCards) - 4):
+			# We now know we have a straight with a high of sortedCards[i], now we check if it is a straight flush
+			if Card(14, sortedCards[i].suit) in sortedCards and \
+							Card(2, sortedCards[i].suit) in sortedCards and \
+							Card(3, sortedCards[i].suit) in sortedCards and \
+							Card(4, sortedCards[i].suit) in sortedCards and \
+							Card(5, sortedCards[i].suit) in sortedCards:
+				return 5
+			i -= 1
+
+	# special case for wheel straight flush
 	return 0
 
 

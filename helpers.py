@@ -101,3 +101,14 @@ def printPlayerInfo(player):
 		print("Hand: " + str(player.hand.to_string(pretty=True)))
 	print("***********************")
 	print("")
+
+
+def cardsContainRank(cards, rank):
+	for card in cards:
+		if card.rank == int(rank):
+			return True
+	return False
+
+def sortCardsByRank(cards, ascending=True):
+	return sorted(cards, key=lambda x: x.rank)
+
