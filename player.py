@@ -1,20 +1,27 @@
 # player.py
 
-from hand import Hand
+from playerhand import PlayerHand
 from card import Card
 from enumerators import Suits
 from helpers import printPlayerInfo
 
 class Player(object):
-	def __init__(self, chips=0, hand=None, name=""):
+	def __init__(self, name="", chips=0, hand=None):
 		self.chips = chips
-		self.hand = hand
 		self.name = name
+		if hand:
+			self.hand = hand
+		else:
+			self.hand = PlayerHand()
 
 	def addChips(self, chipsToAdd):
 		self.chips += chipsToAdd
 
+	def stackSize(self):
+		return self.chips
+
+
 if __name__ == '__main__':
-	h = Hand(Card("A", Suits.SPADES), Card("T", Suits.SPADES))
+	h = PlayerHand(Card("A", Suits.SPADES), Card("T", Suits.SPADES))
 	p = Player(chips=1000, hand=h)
 	printPlayerInfo(p)

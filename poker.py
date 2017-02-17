@@ -7,8 +7,8 @@ from enumerators import *
 
 if __name__ == "__main__":
 
-	heroHand = Hand(Card("A", Suits.SPADES), Card("2", Suits.SPADES))
-	villainHand = Hand(Card("6", Suits.CLUBS), Card("7", Suits.CLUBS))
+	heroHand = PlayerHand(Card("A", Suits.SPADES), Card("2", Suits.SPADES))
+	villainHand = PlayerHand(Card("6", Suits.CLUBS), Card("7", Suits.CLUBS))
 	board = Board(board=(Card("3", Suits.SPADES), Card("4", Suits.SPADES), Card("5", Suits.SPADES)))
 
 	printHand(heroHand)

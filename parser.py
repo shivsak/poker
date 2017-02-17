@@ -1,7 +1,7 @@
 # parser.py
 
 from card import Card
-from hand import Hand
+from playerhand import PlayerHand
 
 # Parse Card
 # Card must be entered as AsKs, 6d7h, etc
@@ -22,7 +22,7 @@ def parseHand(hand):
 
 	card1 = Card(handList[0], handList[1])
 	card2 = Card(handList[2], handList[3])
-	return Hand(card1, card2)
+	return PlayerHand(card1, card2)
 
 
 # Parse the board

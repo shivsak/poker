@@ -2,27 +2,49 @@
 
 from deck import Deck
 from helpers import printDeck, printCards
+from player import Player
 
 class Dealer(object):
 	# constructor
-	def __init__(self):
-		self.deck = Deck()
+	def __init__(self, deck):
+		self.deck = deck
 		self.deck.shuffle()
 
 	# takes a list of players
 	def dealToPlayers(self, players):
 
-		player1Cards = ()
+		if (len(players) > 10):
+			raise ValueError("Too many players in hand")
+
+		playerCards = []
 
 		i = 0;
-		while i < (len(players) * 2):
-			player1Cards += (self.deck.dealTopCard(),)
+		while i <= ((len(players) * 2) -1):
+			if i < len(players):
+				players[i].hand.card1 = self.deck.dealTopCard()
+			else:
+				players[i%len(players)].hand.card2 = self.deck.dealTopCard()
 			i += 1
 
-		return player1Cards
+
+	def dealFlop(self):
+		# Burn a card
+		self.deck.dealTopCard()
+
+		flop = ()
+		#Flop:
+		for i in range(3):
+			flop += (self.deck.dealTopCard(),)
+
+		return flop
 
 # Tester
 if __name__ == '__main__':
-	dealer = Dealer()
+	deck = Deck()
+	deck.shuffle()
+	dealer = Dealer(deck)
 	print(printDeck(dealer.deck))
-	printCards(dealer.dealToPlayers(("P1", "P2")))
+	p = Player(name="P2", chips=1000)
+	dealer.dealToPlayers((p,))
+	print(p.hand.card1.to_string())
+	print(p.hand.card2.to_string())

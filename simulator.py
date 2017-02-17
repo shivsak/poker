@@ -33,8 +33,8 @@ def simulate(heroHand, villainHand, numberOfSimulations=1000, currentBoard=None)
 		for j in range(numCardsToDeal):
 			topCard = deck.dealTopCard()
 			board.board += (topCard,)
-			if topCard in deck.deck:
-				deck.deck.remove(topCard)
+			if topCard in deck.cards:
+				deck.cards.remove(topCard)
 		result = compareHands(heroHand, villainHand, board)
 		if result == 1:
 			heroWins += 1
@@ -51,14 +51,14 @@ def setupDeck(heroHand, villainHand, currentBoard=None):
 	deck = Deck()
 
 	# Remove dealt cards from Deck
-	deck.deck.remove(heroHand.card1)
-	deck.deck.remove(heroHand.card2)
-	deck.deck.remove(villainHand.card1)
-	deck.deck.remove(villainHand.card2)
+	deck.cards.remove(heroHand.card1)
+	deck.cards.remove(heroHand.card2)
+	deck.cards.remove(villainHand.card1)
+	deck.cards.remove(villainHand.card2)
 
 	if currentBoard:
 		for card in currentBoard.board:
-			deck.deck.remove(card)
+			deck.cards.remove(card)
 	deck.shuffle()
 	return deck
 

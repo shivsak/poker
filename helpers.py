@@ -76,7 +76,7 @@ def printHandEvaluation(handEvaluation):
 def printDeck(deck, pretty=True):
 	print("")
 	print("******** DECK *********")
-	for card in deck.deck:
+	for card in deck.cards:
 		print (card.to_string(pretty=pretty), end=" ")
 	print("")
 	print("***********************")

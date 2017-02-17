@@ -4,7 +4,7 @@ from hand_evaluations import *
 from helpers import *
 from card import *
 from board import Board
-from hand import Hand
+from playerhand import PlayerHand
 
 
 # Evaluate using Hand1, Board (array of 5 cards)
