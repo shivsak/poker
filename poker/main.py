@@ -6,7 +6,7 @@ This file creates your application.
 """
 
 import os
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, make_response
 
 app = Flask(__name__)
 
@@ -21,7 +21,9 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'this_should_be_configur
 
 def home():
     """Render website's home page."""
-    return render_template('home.html')
+    r = make_response(render_template('home.html'))
+    r.headers.set('Access-Control-Allow-Origin', "*")
+    return r
 
 
 @app.route('/about/')

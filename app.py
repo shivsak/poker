@@ -26,7 +26,9 @@ def home():
     heroHand = parseHand("AsKs")
     villainHand = parseHand("AcAh")
 
-    return json.jsonify(simulate(heroHand, villainHand, numberOfSimulations=1000))
+    return json.jsonify(
+        simulate(heroHand, villainHand, numberOfSimulations=1000)
+    )
 
 
 @app.route('/about/')
