@@ -23,8 +23,18 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'this_should_be_configur
 @app.route('/')
 def home():
     """Render website's home page."""
-    heroHand = parseHand("AsKs")
-    villainHand = parseHand("AcAh")
+    heroHand = parseHand("5s3s")
+    villainHand = parseHand("Jc9c")
+
+    return json.jsonify(
+        simulate(heroHand, villainHand, numberOfSimulations=1000)
+    )
+
+@app.route('/equity/<hero_hand>/<villain_hand>')
+def equity(hero_hand, villain_hand):
+    """Render website's home page."""
+    heroHand = parseHand(hero_hand)
+    villainHand = parseHand(villain_hand)
 
     return json.jsonify(
         simulate(heroHand, villainHand, numberOfSimulations=1000)
